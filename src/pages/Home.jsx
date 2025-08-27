@@ -58,6 +58,7 @@ export const Home = () => {
 									<div className="card-body">
 										<h5 className="card-tittle">{character.name}</h5>
 										<button className="btn btn-primary" onClick={() => alert(`Find out more about: ${character.name}`)}>More</button>
+										<button className="btn btn-secondary">Favs</button>
 									</div>									
 
 								</div>
@@ -79,6 +80,7 @@ export const Home = () => {
 									<div className="card-body">
 										<h5 className="card-tittle">{planet.name}</h5>
 										<button className="btn btn-primary" onClick={() => alert(`Find out more about: ${planet.name}`)}>More</button>
+										<button className="btn btn-secondary">Favs</button>
 									</div>									
 
 								</div>
@@ -100,8 +102,8 @@ export const Home = () => {
 									<div className="card-body">
 										<h5 className="card-tittle">{vehicle.name}</h5>
 										<button className="btn btn-primary" onClick={() => alert(`Find out more about: ${vehicle.name}`)}>More</button>
-										<button className="btn btn-primary" onClick={() => alert(`Find out more about: ${vehicle.name}`)}>More</button>
-									</div>									
+										<button className="btn btn-secondary">Favs</button>
+									</div>
 
 								</div>
 							</div>

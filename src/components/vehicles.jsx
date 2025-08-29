@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export const CharacterDetails = () => {
+export const vehicleDetails = () => {
 
-  const [character, setCharacter ] = useState({})
+  const [vehicle, setVehicles ] = useState({})
 
   const params = useParams()
   console.log(params.uid);
 
-  const getCharacter = async () => {
-    const response = await fetch (`https://www.swapi.tech/api/people/${params.uid}`)
+  const getVehicles = async () => {
+    const response = await fetch (`https://www.swapi.tech/api/vehicles/${params.uid}`)
     const data = await response.json()
-    setCharacter(data.result.properties)
+    setVehicles(data.result.properties)
   }
 
   useEffect(() => {
-    getCharacter()
+    getVehicles()
   }, [])
 
   return (
@@ -25,12 +25,11 @@ export const CharacterDetails = () => {
         <h1>{character.name}</h1>
         <img src={`https://github.com/tbone849/star-wars-guide/blob/master/build/assets/img/characters/${params.uid}.jpg?raw=true`} />
         <div className="card-body">
-          <p>Name: {character.name}</p>
-          <p>Birth_year: {character.birth_year}</p>
-          <p>Height: {character.height}</p>
-          <p>Skin color: {character.skin_color}</p>
-          <p>Hair color: {character.hair_color} </p>
-          <p>Eye color: {character.eye_color} </p>
+          <p>Name: {vehicle.name}</p>
+          <p>Model: {vehicle.model}</p>
+          <p>Manufacturer: {vehicle.manufacturer}</p>
+          <p>Capacity: {vehicle.cargo_capacity}</p>
+          <p>Cost: {vehicle.cost_in_credits}</p>
         </div>
       </div>
     </div>

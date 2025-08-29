@@ -1,5 +1,6 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
 
@@ -51,10 +52,11 @@ export const Home = () => {
 									className="card-img-top" alt="..." />
 									<div className="card-body">
 										<h5 className="card-tittle">{character.name}</h5>
-										<button className="btn btn-primary" onClick={() => alert(`Find out more about: ${character.name}`)}>More</button>
-										<button className="btn btn-secondary">Favs</button>
-									</div>									
-
+											<Link to={`/character/${character.uid}`}>
+												<button className="btn btn-primary">More</button>
+											</Link>
+											<button onClick={()=>{handleFavorites(character.name)}} className="btn btn-secondary"><i class="fa-solid fa-heart" /></button>
+									</div>
 								</div>
 							</div>
 						)
@@ -69,7 +71,8 @@ export const Home = () => {
 						return (
 							<div className="col-md-3" key={planet.uid}>
 								<div className="card">
-									<img src={`https://github.com/tbone849/star-wars-guide/blob/master/build/assets/img/planets/${planet.uid}.jpg?raw=true`}
+									<img src={planet.uid == "1" ? `https://upload.wikimedia.org/wikipedia/en/6/6d/Tatooine_%28fictional_desert_planet%29.jpg` :
+									 `https://github.com/tbone849/star-wars-guide/blob/master/build/assets/img/planets/${planet.uid}.jpg?raw=true`}
 									className="card-img-top" alt="..." />
 									<div className="card-body">
 										<h5 className="card-tittle">{planet.name}</h5>

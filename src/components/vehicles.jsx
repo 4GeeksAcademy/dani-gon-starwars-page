@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-export const vehicleDetails = () => {
+export const VehicleDetails = () => {
 
   const [vehicle, setVehicles ] = useState({})
 
@@ -20,10 +20,10 @@ export const vehicleDetails = () => {
 
   return (
     <div className="container">
-      <div className="card" style={{width: "400px"}}>
+      <div className="card" style={{width: "300px"}}>
 
-        <h1>{character.name}</h1>
-        <img src={`https://github.com/tbone849/star-wars-guide/blob/master/build/assets/img/characters/${params.uid}.jpg?raw=true`} />
+        <h1>{vehicle.name}</h1>
+        <img src={`https://github.com/tbone849/star-wars-guide/blob/master/build/assets/img/vehicles/${params.uid}.jpg?raw=true`} />
         <div className="card-body">
           <p>Name: {vehicle.name}</p>
           <p>Model: {vehicle.model}</p>

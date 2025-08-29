@@ -76,8 +76,10 @@ export const Home = () => {
 									className="card-img-top" alt="..." />
 									<div className="card-body">
 										<h5 className="card-tittle">{planet.name}</h5>
-										<button className="btn btn-primary" onClick={() => alert(`Find out more about: ${planet.name}`)}>More</button>
-										<button className="btn btn-secondary">Favs</button>
+											<Link to={`/planet/${planet.uid}`}>
+												<button className="btn btn-primary">More</button>
+											</Link>
+										<button onClick={()=>{handleFavorites(planet.name)}} className="btn btn-secondary"><i class="fa-solid fa-heart" /></button>
 									</div>									
 
 								</div>

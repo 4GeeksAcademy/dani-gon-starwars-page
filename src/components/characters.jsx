@@ -20,7 +20,7 @@ export const CharacterDetails = () => {
 
   return (
     <div className="container">
-      <div className="card" style={{width: "400px"}}>
+      <div className="card" style={{width: "300px"}}>
 
         <h1>{character.name}</h1>
         <img src={`https://github.com/tbone849/star-wars-guide/blob/master/build/assets/img/characters/${params.uid}.jpg?raw=true`} />

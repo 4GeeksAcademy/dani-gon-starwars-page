@@ -34,15 +34,9 @@ export const Home = () => {
 
 	useEffect(()=>{
 		getCharacters()
-	},[]);
-
-	useEffect(() => {
 		getPlanets()
-	}, []);
-
-	useEffect(()=>{
 		getVehicles()
-	}, []);
+	},[]);
 
 	return (
 		<div className="text-center mt-5">

@@ -1,5 +1,5 @@
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Home = () => {
@@ -15,23 +15,27 @@ export const Home = () => {
 	const getCharacters = async () => {
 		const response = await fetch("https://www.swapi.tech/api/people")
 		const data = await response.json()
-		console.log(data);
+		console.log(data)
 		setCharacters(data.results)
 	};
 
 	const getPlanets = async () => {
 		const response = await fetch("https://www.swapi.tech/api/planets")
-		const data = await response.json();
-		console.log(data);
-		setPlanets(data.results);
+		const data = await response.json()
+		console.log(data)
+		setPlanets(data.results)
 	};
 
 	const getVehicles = async () => {
 		const response = await fetch("https://www.swapi.tech/api/vehicles")
-		const data = await response.json();
-		console.log(data);
-		setVehicles(data.results);
+		const data = await response.json()
+		console.log(data)
+		setVehicles(data.results)
 	};
+
+	const handleFavorites = (name) => {
+		dispatch({type:"handle_favorites", payload:name})
+	}
 
 	useEffect(()=>{
 		getCharacters()
